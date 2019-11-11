@@ -1,0 +1,124 @@
+<div id="app" :style="{background:background}">
+  <div class="address-block fixed-block" v-hide>
+    <a class="address-link" href="#">Краснодар, Тургенева,&nbsp;123</a>
+    <span class="hours">c&nbsp;10:00 до&nbsp;18:00</span>
+  </div>
+  <logo></logo>
+  <phone>+7&thinsp;861&thinsp;215-30-00</phone>
+  <sidebar></sidebar>
+  <consult-button>Проконсультировать</consult-button>
+  <call-babes-button>Вызвать замерщика</call-babes-button>
+  <mainsection textColor="#000000" backgroundColor="#FCDAE1">
+    <section class="we-create">
+      <h1>
+        <i class="we-create-cursive">Создаём</i>
+        <br />
+        <a href="#category-kitchens" class="we-create-link">Шикарные кухни</a>
+        <a href="#" @click.prevent="loadCategory('wardrobes')" class="we-create-link"
+        >Шкафы&thinsp;/&thinsp;гардеробные</a>
+        <br />
+        <a href="#" @click.prevent="loadCategory('hallways')" class="we-create-link">Прихожие</a>
+        <nobr>
+          <i class="we-create-cursive">мебель в</i>
+          <a href="#" @click.prevent="loadCategory('bathrooms')" class="we-create-link">Ванные</a>
+        </nobr>
+        <br />
+        <a href="#" @click.prevent="loadCategory('livingrooms')" class="we-create-link">Гостинные</a>
+        <a href="#" @click.prevent="loadCategory('cabinets')" class="we-create-link">Кабинеты</a>
+      </h1>
+    </section>
+  </mainsection>
+  <title-section image="/assets/_img/kitchen.png" title="_img/kitchen-bg-sign.png" textColor="#000000" backgroundColor="FCDAE1"></title-section>
+  <supersection id="category-kitchens" textColor="#FCDAE1" backgroundColor="#F097C2">
+      <supersection-nav ref="nav">
+       <nav-item  href="#kitchen-materials"   :position="1">Материалы</nav-item>
+        <nav-item href="#kitchen-furniture"   :position="2">Фурнитура</nav-item>
+        <nav-item href="#kitchen-appliances"  :position="3">Техника</nav-item>
+      </supersection-nav>
+      <subsection textColor="#FCDAE1" backgroundColor="#A55FFF"  :position="1">
+        <template #title ref="title">
+          Износостойкие
+          <br />
+          <i>и&nbsp;благородные</i> материалы
+        </template>
+        <template #subtitle ref="subtitle">
+          <material :count="3" folder="wood">Массив дерева</material>,
+          <material :count="3" folder="wood">древесный шпон</material>,
+          <material :count="3" folder="wood">МДФ&thinsp;+&thinsp;эмаль</material>,
+          <material :count="3" folder="wood">пластик</material>и&nbsp;
+          <material :count="3" folder="wood">стекло</material>мы&nbsp;используем
+          при&nbsp;производстве фасадов.
+        </template>
+        <template #content ref="subcontent">
+          <p>
+            Столешницы изготавливаем из натурального и&nbsp;искусственного камня, стекла, массивов
+            дерева, нержавеющей стали и&nbsp;ламинируем ДСП пластиком. А&nbsp;корпуса кухонь
+            мы&nbsp;собираем из&nbsp;прочных ламинированных&nbsp;ДСП.
+          </p>
+          <p>
+            Работаем с&nbsp;итальянскими фабриками-производителями —
+            <a
+              target="_blank"
+              href="https://www.sayerlack.com"
+            >Sayerlack</a>,
+            <a target="_blank" href="http://www.mobilclan.com/">Mobiclan</a>,
+            <a target="_blank" href="https://www.ilcam.com">ILCAM</a>,
+            <a target="_blank" href="http://www.mosian.it">Mosian</a> и&nbsp;
+            <a target="_blank" href="http://www.attimecitalia.it">Attimec</a>.
+          </p>
+        </template>
+      </subsection>
+      <subsection id="kitchen-furniture" textColor="#EE7E4D" backgroundColor="#274AFF"  :position="2">
+        <template #title>
+          Надёжная
+          <i>фурнитура</i>
+        </template>
+        <template
+          #subtitle
+        >Мебельную фурнитуру можно разделить на 2 группы: лицевая и крепежная (внутренняя)a</template>
+        <template #content>
+          <p>
+            Внутренняя: скобы, элементы крепления, петли, механизмы ящиков, распашных и откидных
+            фасадов, сложные выкатные конструкции. Blum и Kesseböhmer, австрийская и немецкая.
+          </p>
+          <p>Внешняя: ручки двери, ножки, замки.</p>
+        </template>
+      </subsection>
+      <subsection id="kitchen-appliances" backgroundColor="#72C4F4" textColor="#3F4650" :position="3">
+        <template #title>
+          Удобная
+          <i>в&nbsp;использовании</i> техника
+        </template>
+        <template
+          #subtitle
+        >Мебельную фурнитуру можно разделить на 2 группы: лицевая и крепежная (внутренняя)</template>
+        <template #content>
+          <p>Внутренняя: скобы, элементы крепления, петли, механизмы ящиков, распашных и откидных фасадов, сложные выкатные конструкции. Blum и Kesseböhmer, австрийская и немецкая.</p>
+          <p>Внешняя: ручки двери, ножки, замки.</p>
+        </template>
+      </subsection>
+  </supersection>
+  <supersection textColor="#000000" backgroundColor="#ffffff">
+    <div class="subcategory-content" id="our-kitchens"></div>
+  </supersection>
+  <gallery textColor="#000000" backgroundColor="#ffffff">
+    <template #header>
+      <h2 class="subcategory-full-title">
+      В жизни
+      <div class="link-to-inst-block">
+        <span class="about-inst-kitchens">
+          Больше наших кухонь&nbsp;—
+          <br />в&nbsp;нашем инстаграме
+        </span>
+        <a class="link-to-inst" href="https://instagram.com/princess_mebel">
+          <b>Наш инстаграм</b>
+          <span>@princess_mebel</span>
+        </a>
+      </div>
+    </h2>
+    </template>
+  </gallery>
+  <call-babes-button></call-babes-button>
+  <dialog-mesurement></dialog-mesurement>
+  <footer></footer>
+</div>  

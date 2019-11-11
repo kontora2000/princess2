@@ -1,0 +1,2 @@
+1. install / write proper jsonp function and remove jquery from dependencies.
+2. move all coomon style - text color, overflow, etc to div #app (app component).

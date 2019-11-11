@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Princess.furniture — кухни, мебель и шкафы в Краснодаре</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="_img/icons/fav/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="_img/icons/fav/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="_img/icons/fav/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="_img/icons/fav/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="_img/icons/fav/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="_img/icons/fav/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="_img/icons/fav/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="_img/icons/fav/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="_img/icons/fav/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="_img/icons/fav/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="_img/icons/fav/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="_img/icons/fav/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="_img/icons/fav/favicon-16x16.png">
+  <link rel="manifest" href="_img/icons/fav/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="_img/icons/fav/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="_css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="../socket.io/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/CSSPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+</head>
+<body style="transition: background-color 0.25s linear">
+  <div id="allapp" background="#FCDAE1" color="#DBA8B3">
+    <div class="address-block fixed-block hide">
+      <a class="address-link" href="#">Краснодар, Тургенева,&nbsp;123</a>
+      <span class="hours">c&nbsp;10:00 до&nbsp;18:00</span>
+    </div>
+    <div class="logo-wrapper fixed-block">
+      <a href="/" class="logo">
+        <svg class="logo-pr hide" width="61" height="24" viewBox="0 0 61 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M0.325232 0.622372C9.47075 -0.156145 18.0178 -0.408224 22.2849 1.2031C26.1064 2.64617 27.7976 5.47872 27.7976 8.72365C27.7976 11.6209 26.63 13.7139 24.1517 15.4401C22.2741 16.7474 19.8466 17.3298 16.9328 17.5384C14.0019 17.7482 10.579 17.5798 6.72887 17.3903L5.3956 17.3253L5.3956 23.9304H0L0 0.652344L0.325232 0.622372ZM5.3956 13.3437L5.3956 4.19409C13.0565 3.62808 16.8147 3.75163 19.605 5.05113C21.7515 6.05298 22.0995 7.86218 22.0995 8.72365C22.1028 9.77661 21.7743 11.0784 20.314 12.0675C17.8622 13.7321 14.2832 13.7738 5.3956 13.3437Z"
+            fill="white" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M52.6062 17.1338L51.9242 16.0435C55.9635 14.8432 60.1403 11.8825 59.28 6.99111C58.8344 4.4577 56.9603 2.42541 53.7234 1.2031C49.4564 -0.408146 40.8133 -0.159261 31.6678 0.62245L31.3426 0.652344L31.3426 23.9304L36.7382 23.9304L36.7382 17.6701C38.5399 17.6687 47.3536 17.6619 49.1035 17.6704C51.0841 17.68 51.9395 18.1682 52.6062 19.8242C53.016 20.8452 54.2714 23.8987 54.2714 23.8987L60.0345 23.8987C60.0345 23.8987 58.5775 20.2454 58.1222 19.1956C57.1432 16.9398 55.5044 16.4277 52.6062 17.1338ZM36.7382 4.19425V13.3397C38.5262 13.4356 40.108 13.4543 41.5191 13.4332C47.7505 13.3406 50.2288 12.9993 51.9818 11.8825C53.3468 11.0129 53.7673 9.77661 53.7673 8.72365C53.7673 7.86218 53.2732 5.9828 51.2728 5.05113C48.4824 3.75163 44.408 3.6312 36.7382 4.19425Z"
+            fill="white" />
+        </svg>
+        <svg class="logo-crown" width="54" height="32" viewBox="0 0 54 32" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M44.3512 27.9478L9.52868 27.9478L9.52868 32L44.3512 32V27.9478Z" fill="white" />
+          <path d="M5.79502 0.651204L15.2885 23.8956L9.52868 23.8956L0.0351562 0.651204L5.79502 0.651204Z"
+            fill="white" />
+          <path
+            d="M48.7321 0.651204L43.5642 13.3056C42.4649 15.9986 42.4162 18.6538 43.1869 21.7897L43.3625 22.565H42.003L33.0559 0.651204L25.4943 0.651204L16.0008 23.8956H21.1134L26.2814 11.2412C27.3806 8.54824 27.4706 5.83605 26.6586 2.75711L26.483 1.98171L27.8425 1.98171L36.7929 23.8924H44.3577L53.8513 0.64801L48.7321 0.651204Z"
+            fill="white" />
+        </svg>
+        <svg class="logo-cess hide" width="122" height="25" viewBox="0 0 122 25" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M0.666988 12.6929C0.559675 8.24183 3.41371 4.16408 7.80434 2.04548C11.86 0.0927191 19.319 -0.861304 27.0433 1.00849C28.4027 1.33715 29.7752 1.75196 31.1445 2.26562V6.99203C26.6114 4.84071 22.438 4.05884 18.2848 4.05884C14.7788 4.05884 12.4847 4.70018 10.1431 5.87434C7.2914 7.30425 6.04353 9.89351 6.19593 12.5812C6.32998 14.9455 7.49747 17.3933 10.457 18.8C12.4516 19.748 15.2634 20.4209 18.5124 20.4942C22.2233 20.574 26.7661 19.8349 31.1445 18.199V22.8298C26.1717 24.1284 22.4413 24.5464 18.6556 24.5464C14.6747 24.5464 10.9874 23.9593 8.24247 22.7884C3.71848 20.8548 0.771064 17.0833 0.666988 12.6929Z"
+            fill="white" />
+          <path
+            d="M41.4218 4.71607L60.7958 4.71607V0.651095L36.0262 0.651095L36.0262 23.9304L60.7958 23.9336L60.7958 19.8401L41.4218 19.8401V14.3999L60.7958 14.3999V10.3445L41.4218 10.3445V4.71607Z"
+            fill="white" />
+          <path
+            d="M85.8738 10.4817C83.4477 9.83906 80.7826 9.89001 78.5181 9.9334C78.2083 9.93932 77.906 9.94508 77.6129 9.9489C74.5915 9.99042 70.1261 9.88829 69.7911 7.54947C69.7163 7.01664 69.8951 6.22535 70.796 5.69884C72.6726 4.61083 75.7201 4.12903 78.6992 4.16096C81.8864 4.19283 85.5486 4.90536 89.601 6.7285V2.23695C83.9484 -0.293346 73.8467 -1.07186 68.2202 2.00404C66.2038 3.10801 64.9744 5.01925 64.8475 7.24637C64.7337 9.2757 65.5468 11.3337 67.1242 12.3451C69.6415 13.9565 73.5638 14.3457 77.2584 14.3999C77.6181 14.4055 77.9777 14.3969 78.3374 14.3969C81.2289 14.3694 86.3974 14.3202 86.6706 16.7994C86.7357 17.3801 86.4471 18.3189 85.4741 18.8202C83.6658 19.7518 80.7156 20.3793 76.5169 20.3762C73.593 20.373 68.8194 19.4932 65.3842 18.2875V22.8267C68.9097 23.937 73.2221 24.5781 77.9089 24.505C81.6069 24.4473 84.8351 24.3117 87.862 22.8267C90.5584 21.5038 91.9513 18.6327 91.6816 16.0948C91.5277 14.6466 90.7783 11.7804 85.8738 10.4817Z"
+            fill="white" />
+          <path
+            d="M115.161 10.4817C112.735 9.83906 110.07 9.89001 107.805 9.9334C107.495 9.93932 107.193 9.94508 106.9 9.9489C103.878 9.99042 99.413 9.88829 99.078 7.54947C99.0032 7.01664 99.1821 6.22535 100.083 5.69884C101.96 4.61083 105.007 4.12903 107.986 4.16096C111.173 4.19283 114.836 4.90536 118.888 6.7285V2.23695C113.235 -0.293346 103.134 -1.07186 97.5072 2.00404C95.4907 3.10801 94.2614 5.01925 94.1345 7.24637C94.0207 9.2757 94.8338 11.3337 96.4111 12.3451C98.9284 13.9565 102.851 14.3457 106.545 14.3999C106.905 14.4055 107.265 14.3969 107.624 14.3969C110.516 14.3694 115.684 14.3202 115.958 16.7994C116.023 17.3801 115.734 18.3189 114.761 18.8202C112.953 19.7518 110.003 20.3793 105.804 20.3762C102.88 20.373 98.1063 19.4932 94.6712 18.2875V22.8267C98.1967 23.937 102.509 24.5781 107.196 24.505C110.894 24.4473 114.122 24.3117 117.149 22.8267C119.845 21.5038 121.238 18.6327 120.969 16.0948C120.815 14.6466 120.065 11.7804 115.161 10.4817Z"
+            fill="white" />
+        </svg>
+      </a>
+    </div>
+    <div class="phone-block fixed-block">
+      <a class="phone-number-link" href="tel:+78612153000">+7&thinsp;861&thinsp;215-30-00</a>
+    </div>
+    <nav class="site-menu" id="sidebarMenu" style="visibility: none">
+      <div class="menu-icon">
+        <div class="menu-icon-line first-line"></div>
+        <div class="menu-icon-line second-line"></div>
+      </div>
+      <ul class="site-menu-wrapper">
+        <li><a class="nav-link active" href="#" @click.prevent="loadCategory2('kitchens')">Кухни</a></li>
+        <li><a class="nav-link" href="#" @click.prevent="loadCategory2('wardrobes')">Шкафы</a></li>
+        <li><a class="nav-link" href="#" @click.prevent="loadCategory2('hallways')">Прихожие</a></li>
+        <li><a class="nav-link" href="#" @click.prevent="loadCategory2('bathrooms')">Ванные</a></li>
+        <li><a class="nav-link" href="#" @click.prevent="loadCategory2('livingrooms')">Гостиные</a></li>
+        <li><a class="nav-link" href="#" @click.prevent="loadCategory2('cabinets')">Кабинеты</a></li>
+      </ul>
+    </nav>
+    <a href="#" id="consult" class="link-open-chat fixed-block">
+      <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M25.9578 1.78831C23.6361 0.66047 20.08 0 16.0028 0C11.9257 0 8.36948 0.66047 6.04777 1.78831C2.22544 3.64658 -0.0906033 7.22319 0.00283135 11.1272C0.0934346 14.9025 2.41231 18.1573 6.21765 19.8785L5.79861 20.8944H2.19147L0 28L13.1488 21.4485C14.0662 21.4849 16.4105 21.524 16.62 21.524C20.0856 21.524 23.1718 21.0091 25.5614 19.982C29.4999 18.2889 31.9065 14.9781 31.9971 11.1272C32.0934 7.22319 29.7773 3.64658 25.9578 1.78831Z"
+          fill="white" />
+      </svg>
+      <span class="hide">Проконсультироваться</span>
+    </a>
+   < <button class="button-measurer fixed-block" id="call-babes">Вызвать замерщика</button>
+    <button class="button-measurer fixed-block" id="call-babes-background"></button>>
+    <mainsection>
+      <section>
+        <h2 class="we-create">
+          <i class="we-create-cursive">Создаём</i><br>
+          <a href="#category-kitchens" class="we-create-link">Шикарные кухни</a>
+          <a href="#" @click.prevent="loadCategory('wardrobes')"
+            class="we-create-link">Шкафы&thinsp;/&thinsp;гардеробные</a><br>
+          <a href="#" @click.prevent="loadCategory('hallways')" class="we-create-link">Прихожие</a>
+          <nobr><i class="we-create-cursive">мебель в</i>
+            <a href="#" @click.prevent="loadCategory('bathrooms')" class="we-create-link">Ванные</a></nobr>
+          <br>
+          <a href="#" @click.prevent="loadCategory('livingrooms')" class="we-create-link">Гостинные</a>
+          <a href="#" @click.prevent="loadCategory('cabinets')" class="we-create-link">Кабинеты</a>
+        </h2>
+      </section>
+      <section class="second-section" style="display: none;" data-background="#F097C2" data-font-color="#FCDAE1">
+        <div class="features-block">
+          <div class="feature-header sticker-free">></div>
+          <div class="feature-header">замеряем</div>
+          <div class="feature-header">проектируем</div>
+          <div class="feature-header">доставляем и&nbsp;собираем</div>
+        </div>
+        <div class="howtoorderin2words-wrapper">
+          <div class="howtoorderin2words-block">
+            <h4>Заказать просто</h4>
+            <div class="htoi2w-step">
+              <span class="htoi2w-stepnum">1</span>
+              <p>Вызываете замерщика. Он&nbsp;правильно замерит место под&nbsp;установку мебели</p>
+            </div>
+            <div class="htoi2w-step">
+              <span class="htoi2w-stepnum">2</span>
+              <p>Мы проектируем мебель и&nbsp;рассчитываем стоимость</p>
+            </div>
+            <div class="htoi2w-step">
+              <span class="htoi2w-stepnum">3</span>
+              <p>Оплачиваете заказ и&nbsp;радуетесь шикарной мебели</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </mainsection>
+    <title-section image="_img/kitchen.png" title="_img/kitchen-bg-sign.png"></title-section>
+    <supersection :sections="3" id="category-kitchens" color="#FCDAE1" background="#F097C2">
+      <template v-slot:default="slotProps">
+        <!-- <h1 class="category-block-header text-outlined" id="cat1">Шикарные кухни</h1>
+						<p class="subtitle">Никаких типовых решений&nbsp;— каждая кухня проектируется и&nbsp;изготавливается по&nbsp;индивидуальному проекту</p> -->
+        <div class="subcategory-wrapper">
+          <ul class="category-nav">
+            <li class="category-nav-row"><a class="category-nav-link" :class={active:slotProps.current==1}
+                href="#kitchen-materials">Материалы</a></li>
+            <li class="category-nav-row"><a class="category-nav-link" href="#kitchen-furniture"
+                :class={active:slotProps.current==2}>Фурнитура</a></li>
+            <li class="category-nav-row"><a class="category-nav-link" :class={active:slotProps.current==3}
+                href="#kitchen-appliances">Техника</a></li>
+          </ul>
+          <subsection background="#A55FFF" color="#FCDAE1" :currentprop="slotProps.current" :position="1">
+            <template #title>Износостойкие <br><i>и&nbsp;благородные</i> материалы</template>
+            <template #subtitle>
+              <material :count="3" folder="wood">Массив дерева</material>, <material :count="3" folder="wood">древесный
+                шпон</material>, <material :count="3" folder="wood">
+                МДФ&thinsp;+&thinsp;эмаль</material>, <material :count="3" folder="wood">пластик
+              </material> и&nbsp;<material :count="3" folder="wood">стекло</material> мы&nbsp;используем
+              при&nbsp;производстве фасадов.
+            </template>
+            <template #content>
+              <p>Столешницы изготавливаем из натурального и&nbsp;искусственного камня, стекла, массивов
+                дерева, нержавеющей стали и&nbsp;ламинируем ДСП пластиком. А&nbsp;корпуса кухонь
+                мы&nbsp;собираем из&nbsp;прочных ламинированных&nbsp;ДСП.</p>
+              <p>Работаем с&nbsp;итальянскими фабриками-производителями — <a target="_blank"
+                  href="https://www.sayerlack.com">Sayerlack</a>, <a target="_blank"
+                  href="http://www.mobilclan.com/">Mobiclan</a>, <a target="_blank"
+                  href="https://www.ilcam.com">ILCAM</a>, <a target="_blank" href="http://www.mosian.it">Mosian</a>
+                и&nbsp;<a target="_blank" href="http://www.attimecitalia.it">Attimec</a>.</p>
+            </template>
+          </subsection>
+          <subsection id="kitchen-furniture" background="#274AFF" color="#EE7E4D" :currentprop="slotProps.current"
+            :position="2">
+            <template #title>Надёжная <i>фурнитура {{slotProps.current}}</i></template>
+            <template #subtitle>Мебельную фурнитуру можно разделить на 2 группы: лицевая и крепежная
+              (внутренняя)</template>
+            <template #content>
+              <p>Внутренняя: скобы, элементы крепления, петли, механизмы ящиков, распашных и откидных
+                фасадов, сложные выкатные конструкции. Blum и Kesseböhmer, австрийская и немецкая.</p>
+              <p>Внешняя: ручки двери, ножки, замки.</p>
+            </template>
+          </subsection>
+          <subsection id="kitchen-appliances" background="#72C4F4" color="#3F4650" :currentprop="slotProps.current"
+            :position="3">
+            <template #title>Удобная <i>в&nbsp;использовании</i> техника</template>
+            <template #subtitle>Мебельную фурнитуру можно разделить на 2 группы: лицевая и крепежная
+              (внутренняя)</template>
+            <template #content>
+              <p>Внутренняя: скобы, элементы крепления, петли, механизмы ящиков, распашных и откидных
+                фасадов, сложные выкатные конструкции. Blum и Kesseböhmer, австрийская и немецкая.</p>
+              <p>Внешняя: ручки двери, ножки, замки.</p>
+            </template>
+          </subsection>
+          <!-- <div class="scroll-empty" style="overflow: hidden;background: transparent;"></div> -->
+        </div>
+      </template>
+    </supersection>
+    <supersection :sections="0" color="#000000" background="#ffffff">
+      <div class="subcategory-content" id="our-kitchens">
+        <h2 class="subcategory-full-title">В жизни
+          <div class="link-to-inst-block">
+            <span class="about-inst-kitchens">Больше наших кухонь&nbsp;—<br>в&nbsp;нашем инстаграме</span>
+            <a class="link-to-inst" href="https://instagram.com/princess_mebel">
+              <b>Наш инстаграм</b>
+              <span>@princess_mebel</span>
+            </a>
+          </div>
+        </h2>
+        <gallery hashtag="Кухни"></gallery>
+      </div>
+    </supersection>
+    <section id="next-category" class="category-block next-category" data-background="#fff" @click="loadNextCategory">
+      <h1 class="category-block-header text-outlined next-category-header">{{nextCategory}}</h1>
+      <p class="subtitle">У нас нет типовых решений&nbsp;— каждую кухню мы&nbsp;проектируем и&nbsp;изготавливаем
+        по&nbsp;индивидуальному проекту</p>
+      <ul class="category-nav">
+        <li class="category-nav-row"><a class="category-nav-link active" href="#wardrobe-materials">Материалы</a></li>
+        <li class="category-nav-row"><a class="category-nav-link" href="#wardrobe-furniture">Фурнитура</a></li>
+      </ul>
+      <div class="subcategory-content" id="wardrobe-materials">
+        <h2 class="subcategory-full-title">Износостойкие <i>и&nbsp;благородные</i> материалы</h2>
+        <p class="subtitle">Фасады, столешницы и&nbsp;корпусы кухонь мы производим из&nbsp;стойких
+          к&nbsp;повреждениям и&nbsp;классных на&nbsp;вид материалов</p>
+        <p>Так, например, для&nbsp;фасадов мы&nbsp;предлагаем использовать массивы <span class="pseudolink">дерева<span
+              class="show-onhover">вишня, акация, ясень, дуб, ольха, сосна,
+              берёза, орех и&nbsp;орех&nbsp;Индика, бук</span></span>, <span class="pseudolink">древесный&nbsp;шпон<span
+              class="show-onhover">доступно более 90 вариантов
+              шпонирования— несколько видов палисандра, орехов, сосен, дубов, змеиных деревьев, ясеней,
+              абрикосов, например</span></span>, МДФ&thinsp;+&thinsp;эмаль, <span class="pseudolink">стекло<span
+              class="show-onhover">глянцевое, матовое, прозрачное
+              и&nbsp;абсолютно непрозрачное, и&nbsp;конечно различных цветов</span></span> и&nbsp;<span
+            class="pseudolink">витражи<span class="show-onhover">могут быть паяными, пленочными,
+              с&nbsp;УФ-печатью, различными деколями, гравировками</span></span>. При изготовлении
+          столешниц — натуральный и&nbsp;искусственный камни, стекло, массив дерева, нержавеющую сталь
+          и&nbsp;ламинируем ДСП пластиком. А&nbsp;корпуса кухонь мы&nbsp;собираем
+          из&nbsp;ламинированных&nbsp;ДСП.</p>
+        <p>В&nbsp;основном, мы работаем с&nbsp;итальянскими фабриками-производителями — Slayerlack, Mobiclan,
+          Papa S.R.L., ILCAM, Mosian и&nbsp;Attimec.</p>
+      </div>
+      <div class="subcategory-content" id="wardrobe-furniture">
+        <h2 class="subcategory-full-title">Надёжная фурнитура</h2>
+        <p class="subtitle">Мебельную фурнитуру можно разделить на 2 группы: лицевая и крепежная (внутренняя)
+        </p>
+        <p>Внутренняя: скобы, элементы крепления, петли, механизмы ящиков, распашных и откидных фасадов, сложные
+          выкатные конструкции. Blum и Kesseböhmer, австрийская и немецкая.</p>
+        <p>Внешняя: ручки двери, ножки, замки.</p>
+      </div>
+    </section>
+
+
+  </div>
+</body>
+
+</html>
