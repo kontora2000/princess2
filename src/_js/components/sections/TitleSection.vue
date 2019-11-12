@@ -13,6 +13,12 @@
   </section>
 </template>
 
+<style>
+  .section-title-scene{
+    min-height: 100vh;
+    height: 100vh;
+  }
+</style>
 
 <script>
 import { TweenLite, TimelineLite, Power2 } from 'gsap/TweenMax';
@@ -28,9 +34,8 @@ export default {
   },
   props: ['title', 'image'],
   mounted() {
-    const { image, container, } = this.$refs;
+    const { image, } = this.$refs;
     this.rows = this.$refs.rows;
-    console.log(this.rows);
     this.timeLine = new TimelineLite();
     const w = 4000;
     // timeLine.to(this.imageRef, 3, {y:-300});
@@ -72,9 +77,9 @@ export default {
     );
     this.scene
       .setTween(this.timeLine)
-      .addIndicators({ name: 'KuhniKuhni', })
-      .setPin(container, { pushFollowers: true, });
-    this.$scrollmagic.updateScene(this.scene);
+      .setPin(this.$refs.container, { pushFollowers: true, });
+    // this.$scrollmagic.updateScene(this.scene);
+    console.log(this.scene);
   },
 };
 </script>

@@ -15,8 +15,9 @@
 </template>
 
 <style>
-  .subsection {
-    opacity: 0;
+  .subsection-wrapper {
+    min-height: 100vh;
+    height: 100vh;
   }
   
 </style>
@@ -28,7 +29,6 @@ import sectionMixin from '../../mixins/sectionMixin';
 export default {
   name: 'subsection',
   mounted() {
-    this.$scrollmagic.removeScene(this.scene);
     this.$root.$on('subsection-change', this.changeCurrent);
     // this.timeline = new TimeineLite();
   },

@@ -4,12 +4,6 @@
   </ul>
 </template>
 
-<style>
-  .category-nav{
-    position: sticky;
-  }
-</style>
-
 <script>
 
 export default {

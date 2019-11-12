@@ -15,10 +15,12 @@ export default {
         triggerElement: this.$el,
         triggerHook: 0,
         duration: this.$el.clientHeight,
+        reverse: true, 
       })
       .on('enter', () => {
         this.changeBackgroundColor();
         this.changeTextColor();
+        console.log('enter');
       })
       .addIndicators();
     this.$scrollmagic.addScene(this.scene);
