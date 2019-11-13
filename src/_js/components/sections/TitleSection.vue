@@ -13,13 +13,6 @@
   </section>
 </template>
 
-<style>
-  .section-title-scene{
-    min-height: 100vh;
-    height: 100vh;
-  }
-</style>
-
 <script>
 import { TweenLite, TimelineLite, Power2 } from 'gsap/TweenMax';
 import sectionMixin from '../../mixins/sectionMixin';

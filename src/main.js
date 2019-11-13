@@ -4,7 +4,6 @@ import VueScrollmagic from 'vue-scrollmagic';
 import store from './_js/store/Store';
 import App from './App.vue';
 // styles
-import './_css/style.css';
 import vHide from './_js/directives/vHide';
 
 

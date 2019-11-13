@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=EB+Garamond:400i|Montserrat:300,400,500&subset=cyrillic');
 
 :root {
-	--Black: #000;
+	--Black: rgb(0, 0, 0);
 	--BlackLinkBorder: rgba(0,0,0,.16);
 	--BlackLinkOpacity: rgba(0,0,0,.6);
 	--BlackLinkOpacityBorder: rgba(0,0,0,.24);
@@ -386,6 +386,7 @@ ul {
 
 .phone-block {
 	right: 2rem;
+	color:#f00;
 }
 
 .link-open-chat {

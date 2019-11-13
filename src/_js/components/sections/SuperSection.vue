@@ -3,6 +3,7 @@
     <div class="subcategory-wrapper">
     <slot></slot>
     </div>
+    <div></div>
   </section>
 </template>
 <style scoped>
@@ -24,12 +25,15 @@ export default {
     };
   },
   mixins: [sectionMixin],
+  
   mounted() {
     this.$scrollmagic.removeScene(this.scene);
     this.subsectionCount = this.$el.querySelectorAll('.subsection').length;
     if (this.subsectionCount !== 0) {
       this.$el.style.minHeight = `${this.sections * 100}vh`;
     }
+    this.scene.setPin('.category-nav');
+    this.$scrollmagic.updateScene(this.scene);
   },
 };
 </script>
