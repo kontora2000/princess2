@@ -497,6 +497,7 @@ ul {
 
 .scene-kitchen-counter {
 	background-image: url('../assets/_img/main-scene/kitchen.png');
+	position: fixed;
 }
 
 .scene-kitchen-chairs {
@@ -514,8 +515,10 @@ ul {
 .we-create {
 	line-height: 5rem;
 	margin: 24% .75rem 4rem;
+	position: relative;
 	text-align: center;
 	width: calc(100% - 1.5rem);
+	z-index: 6;
 }
 @media (max-width: 460px) {
 	.we-create {
