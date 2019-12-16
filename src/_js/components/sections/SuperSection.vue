@@ -9,7 +9,7 @@
 <style scoped>
   .category-block{
     min-height: 360vh;
-    height: 360vh;
+    
   }
 </style>
 

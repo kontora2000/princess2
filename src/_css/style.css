@@ -479,7 +479,7 @@ ul {
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 120vh;
+	height: 100vh;
 	position: absolute;
 	width: 100%;
 	min-width: 100vw;
@@ -496,8 +496,8 @@ ul {
 }
 
 .scene-kitchen-counter {
-	background-image: url('../assets/_img/main-scene/kitchen2.png');
-	position: fixed;
+	background-image: url('../assets/_img/main-scene/kitchen.png');
+	position: fixed /*!important*/;
 }
 
 .scene-kitchen-chairs {
@@ -536,6 +536,11 @@ ul {
 		text-align: center;
 		width: calc(100% - 1rem);
 	}
+}
+
+.we-create h1 {
+	font-size: 4rem;
+	line-height: 4.5rem;
 }
 
 .we-create-link {

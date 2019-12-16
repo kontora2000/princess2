@@ -24,8 +24,8 @@
     min-height: 100px;
   }
   .subsection-wrapper {
-    min-height: 50vh;
-    height: 50vh;
+    min-height: 150vh;
+    height: 200vh;
   }
   .subcategory-content{
     position: sticky;
