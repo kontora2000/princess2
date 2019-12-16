@@ -8,8 +8,8 @@
 </template>
 <style scoped>
   .category-block{
-    min-height: 300vh;
-    height: 300vh;
+    min-height: 360vh;
+    height: 360vh;
   }
 </style>
 
@@ -25,7 +25,6 @@ export default {
     };
   },
   mixins: [sectionMixin],
-  
   mounted() {
     this.$scrollmagic.removeScene(this.scene);
     this.subsectionCount = this.$el.querySelectorAll('.subsection').length;

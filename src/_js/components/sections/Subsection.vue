@@ -24,14 +24,21 @@
     min-height: 100px;
   }
   .subsection-wrapper {
-    min-height: 100vh;
-    height: 100vh;
+    min-height: 50vh;
+    height: 50vh;
   }
   .subcategory-content{
     position: sticky;
     position: -webkit-sticky;
     top:0;
   }
+
+  .fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 </style>
 
 <script>
@@ -43,11 +50,15 @@ export default {
   mounted() {
     this.$root.$on('subsection-change', this.changeCurrent);
     // eslint-disable-next-line func-names
-    this.scene.on('start', () => {
+    this.scene.on('enter', () => {
       this.changeBackgroundColor(this.color);
       this.changeTextColor(this.color);
       this.show = true;
-    });
+    })
+      .on('leave', () => {
+        this.show = false;
+      });
+    this.scene.triggerHook(0.0);
     this.$scrollmagic.updateScene(this.scene);
     // this.timeline = new TimeineLite();
   },

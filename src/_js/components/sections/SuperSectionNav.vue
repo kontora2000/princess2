@@ -11,7 +11,5 @@
 
 export default {
   name: 'supersection-nav',
-  
-
 };
 </script>

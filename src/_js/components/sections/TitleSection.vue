@@ -7,7 +7,8 @@
           <img src="../../../assets/_img/kitchen-bg-sign.png" />
         </div>
       </div>
-      <img src="../../../assets/_img/kitchen.png" class="section-title-image" ref="image"/>
+      <!-- <img src="../../../assets/_img/main-scene/kitchen.png" class="section-title-image" ref="image"/> -->
+
     </div>
     <div></div>
   </section>
@@ -27,7 +28,8 @@ export default {
   },
   props: ['title', 'image'],
   mounted() {
-    const { image, } = this.$refs;
+    const img = document.querySelector('.scene-kitchen-counter');
+    // const { image, } = this.$refs;
     this.rows = this.$refs.rows;
     this.timeLine = new TimelineLite();
     const w = 4000;
@@ -64,13 +66,16 @@ export default {
       ),
       0
     );
-    this.timeLine.add(
-      TweenLite.to(image, 2, { top: '-100vh', ease: Power2.easeOut, }),
-      4
-    );
+    // this.timeLine.add(
+    //   TweenLite.to(image, 2, { top: '-100vh', ease: Power2.easeOut, }),
+    //   4
+    // );
     this.scene
       .setTween(this.timeLine)
-      .setPin(this.$refs.container, { pushFollowers: true, });
+      .setPin(this.$refs.container, { pushFollowers: true, })
+      .on('leave', () => {
+        img.style.position = 'absolute';
+      });
     // this.$scrollmagic.updateScene(this.scene);
     console.log(this.scene);
   },

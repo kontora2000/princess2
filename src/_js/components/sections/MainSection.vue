@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { TweenLite, Power2 } from 'gsap/TweenMax';
+import { TimelineLite, Power2 } from 'gsap/TweenMax';
 import sectionMixin from '../../mixins/sectionMixin';
 
 
@@ -19,8 +19,16 @@ export default {
   },
   mounted() {
     this.menu = this.$el.querySelector('.we-create');
-    // this.timeLine = new TimelineLite();
-    const tween = TweenLite.to(this.menu, 0.4, { y: -200, ease: Power2.easeOut, });
+    this.timeLine = new TimelineLite();
+    const cloudsBack = document.querySelector('.clouds-back');
+    const cloudsFront = document.querySelector('.clouds-front');
+    const chairs = document.querySelector('.scene-kitchen-chairs');
+    const tableChairs = document.querySelector('.scene-table-chairs');
+    const tween = this.timeLine.to(this.menu, 0.4, { y: -400, ease: Power2.easeOut, }, 0)
+      .to(cloudsBack, 0.3, { opacity: 0, }, 0)
+      .to(cloudsFront, 0.3, { opacity: 0, }, 0)
+      .to(chairs, 0.3, { opacity: 0, }, 0)
+      .to(tableChairs, 0.3, { opacity: 0, }, 0);
     // this.timeLine.add(TweenLite.to(this.menu, 0.5, {top:"-60%", ease:  Linear.easeNone}));
     this.scene.setTween(tween)
       .setPin(this.menu)

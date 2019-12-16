@@ -479,7 +479,7 @@ ul {
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 100vh;
+	height: 120vh;
 	position: absolute;
 	width: 100%;
 	min-width: 100vw;
@@ -496,12 +496,16 @@ ul {
 }
 
 .scene-kitchen-counter {
-	background-image: url('../assets/_img/main-scene/kitchen.png');
+	background-image: url('../assets/_img/main-scene/kitchen2.png');
 	position: fixed;
 }
 
 .scene-kitchen-chairs {
 	background-image: url('../assets/_img/main-scene/chairs.png');
+}
+
+.scene-kitchen-lights {
+	background-image: url('../assets/_img/main-scene/lights.png');
 }
 
 .scene-table-chairs {
@@ -511,6 +515,8 @@ ul {
 .clouds-front {
 	background-image: url('../assets/_img/main-scene/clouds-front.png'); 
 }
+
+
 
 .we-create {
 	line-height: 5rem;
