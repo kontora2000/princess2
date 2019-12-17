@@ -28,7 +28,6 @@ export default {
   },
   props: ['title', 'image'],
   mounted() {
-    const img = document.querySelector('.scene-kitchen-counter');
     // const { image, } = this.$refs;
     this.rows = this.$refs.rows;
     this.timeLine = new TimelineLite();
@@ -72,10 +71,7 @@ export default {
     // );
     this.scene
       .setTween(this.timeLine)
-      .setPin(this.$refs.container, { pushFollowers: true, })
-      .on('leave', () => {
-        img.style.position = 'absolute';
-      });
+      .setPin(this.$refs.container, { pushFollowers: true, });
     // this.$scrollmagic.updateScene(this.scene);
     console.log(this.scene);
   },

@@ -20,6 +20,9 @@ export default {
   },
   mounted() {
     this.$root.$on('subsection-change', this.changeCurrent);
+    if (this.position === 1) {
+      this.isCurrent = true;
+    }
   },
   methods: {
     changeCurrent(current) {

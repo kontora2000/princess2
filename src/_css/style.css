@@ -479,7 +479,7 @@ ul {
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 120vh;
+	height: 100vh;
 	position: absolute;
 	width: 100%;
 	min-width: 100vw;
@@ -493,11 +493,15 @@ ul {
 
 .clouds-back {
 	background-image: url('../assets/_img/main-scene/clouds-back.png');
+	min-height: 120vh;
+	height: 120vh;
 }
 
 .scene-kitchen-counter {
 	background-image: url('../assets/_img/main-scene/kitchen2.png');
 	position: fixed;
+	min-height: 120vh;
+	height: 120vh;
 }
 
 .scene-kitchen-chairs {

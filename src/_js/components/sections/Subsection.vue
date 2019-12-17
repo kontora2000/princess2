@@ -1,7 +1,7 @@
 <template>
-  <div class="subsection-wrapper">
+  <div ref="wrapper" class="subcontent-wrapper">
     <transition name="fade">
-    <div class="subcategory-content subsection" v-show="show" >
+    <div ref="sub" class="subcategory-content subsection" v-show="show">
       <h2 class="subcategory-full-title">
         <slot name="title" ></slot>
       </h2>
@@ -13,30 +13,19 @@
       </div>
     </div>
     </transition>
-    <div class="bottom">
   </div>
-  </div>
-  
 </template>
 
 <style>
-  .bottom{
-    min-height: 100px;
+  .subsection {
+    position: absolute;
+    height: 100vh;
+    min-height: 100vh;
   }
-  .subsection-wrapper {
-    min-height: 50vh;
-    height: 50vh;
-  }
-  .subcategory-content{
-    position: sticky;
-    position: -webkit-sticky;
-    top:0;
-  }
-
   .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+  transition: opacity .8s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter, .fade-leave-to {
   opacity: 0;
 }
 </style>
@@ -49,18 +38,24 @@ export default {
   name: 'subsection',
   mounted() {
     this.$root.$on('subsection-change', this.changeCurrent);
-    // eslint-disable-next-line func-names
     this.scene.on('enter', () => {
-      this.changeBackgroundColor(this.color);
-      this.changeTextColor(this.color);
-      this.show = true;
+      this.$root.$emit('subsection-change', this.position);
     })
-      .on('leave', () => {
-        this.show = false;
+      .on('leave', (event) => {
+        if (!(event.progress === 0 && this.position === 1)) {
+          this.show = false;
+        }
       });
-    this.scene.triggerHook(0.0);
+    const h = window.screen.height * 2;
+    const off = this.$el.closest('.category-block').offsetTop;
+    this.scene.offset(off + (this.position - 1) * h);
+    this.scene.duration(h);
+    this.scene.triggerElement(null);
     this.$scrollmagic.updateScene(this.scene);
-    // this.timeline = new TimeineLite();
+    if (this.position === 1) { 
+      this.show = true; 
+      this.$el.style.opacity = '0';
+    }
   },
   mixins: [sectionMixin],
   data() {
@@ -77,13 +72,13 @@ export default {
       if (current === this.position && this.isCurrent === false) {
         this.changeBackgroundColor();
         this.changeTextColor();
+        this.isCurrent = true;
         this.show = true;
-        TweenLite.to(this.$el, 0.5, {
-          opacity: 1,
-          onComplete() {
-            this.isCurrent = true;
-          },
-        });
+        if (this.position > 1) {
+          TweenLite.to(document.querySelector('.scene-kitchen-counter'), 0.4, { opacity: 0, });
+        } else {
+          TweenLite.to(document.querySelector('.scene-kitchen-counter'), 0.4, { opacity: 1, });
+        }
       } else this.isCurrent = false;
     },
   },
