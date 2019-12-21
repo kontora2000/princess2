@@ -5,10 +5,10 @@
       <h2 class="subcategory-full-title">
         <slot name="title" ></slot>
       </h2>
-      <p class="subtitle">
-        <slot name="subtitle"></slot>
-      </p>
       <div class="subcontent">
+        <span class="subtitle">
+          <slot name="subtitle"></slot>
+        </span>
         <slot name="content"></slot>
       </div>
     </div>

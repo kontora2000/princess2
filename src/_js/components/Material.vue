@@ -1,6 +1,6 @@
 <template>
   <span class="pseudolink" v-on:mouseenter="showImg" v-on:mouseleave="hideImg">
-    <slot></slot>\
+    <slot></slot>
     <div v-show="showImage" ref="imgContainer" class="material-image">
       <img ref="image" :src="currentImageSrc" />
     </div>
@@ -72,7 +72,6 @@ export default {
       this.showImage = false;
       this.timeLine.pause();
       this.$refs.imgContainer.style.top = '75%';
-      
       // TweenLite.to(this.divRef, 0.25, {top:'75%', onComplete:()=>{
       // }});
     },

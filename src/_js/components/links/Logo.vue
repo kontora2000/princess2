@@ -2,7 +2,7 @@
     <div class="logo-wrapper fixed-block">
           <a href="/" class="logo">
           <span class="logo-pr">
-            <svg class="logo-pr" v-hide width="61" height="24" viewBox="0 0 61 24" fill="none"
+            <svg class="logo-pr" v-hide width="61" height="24" viewBox="0 0 61 24" fill="none" 
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M0.325232 0.622372C9.47075 -0.156145 18.0178 -0.408224 22.2849 1.2031C26.1064 2.64617 27.7976 5.47872 27.7976 8.72365C27.7976 11.6209 26.63 13.7139 24.1517 15.4401C22.2741 16.7474 19.8466 17.3298 16.9328 17.5384C14.0019 17.7482 10.579 17.5798 6.72887 17.3903L5.3956 17.3253L5.3956 23.9304H0L0 0.652344L0.325232 0.622372ZM5.3956 13.3437L5.3956 4.19409C13.0565 3.62808 16.8147 3.75163 19.605 5.05113C21.7515 6.05298 22.0995 7.86218 22.0995 8.72365C22.1028 9.77661 21.7743 11.0784 20.314 12.0675C17.8622 13.7321 14.2832 13.7738 5.3956 13.3437Z"
@@ -13,7 +13,7 @@
             </svg>
           </span>
           <span>
-            <svg class="logo-crown"  width="54" height="32" viewBox="0 0 54 32" fill="none"
+            <svg class="logo-crown"  width="54" height="32" viewBox="0 0 54 32" fill="none" 
               xmlns="http://www.w3.org/2000/svg">
               <path d="M44.3512 27.9478L9.52868 27.9478L9.52868 32L44.3512 32V27.9478Z" fill="white" />
               <path d="M5.79502 0.651204L15.2885 23.8956L9.52868 23.8956L0.0351562 0.651204L5.79502 0.651204Z"
@@ -53,6 +53,8 @@ export default {
   methods: {
     hide() {
       this.isVisible = false;
+      this.$refs.left.style.width = '0px';
+      this.$refs.right.style.width = '0px';
     },
   },
 };
