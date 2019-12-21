@@ -1,10 +1,15 @@
 <div id="app" :style="{background:background}">
-  <div class="address-block fixed-block" v-hide>
-    <a class="address-link" href="#">Краснодар, Тургенева,&nbsp;123</a>
-    <span class="hours">c&nbsp;10:00 до&nbsp;18:00</span>
+  <div class="logo-contacts-wrapper">
+    <logo></logo>
+    <div class="logo-contacts-inner">
+      <span class="logo-subtitle">Студия мебели и дизайна</span>
+      <span class="address-block" v-hide>
+        <a class="address-link" href="#">Краснодар, <br>Тургенева,&nbsp;123</a>
+        <span class="hours">c&nbsp;10<sup>00</sup> до&nbsp;18<sup>00</sup></span>
+      </span>
+      <phone>+7&thinsp;861&thinsp;215-30-00</phone>
+    </div>
   </div>
-  <logo></logo>
-  <phone>+7&thinsp;861&thinsp;215-30-00</phone>
   <sidebar></sidebar>
   <consult-button>Проконсультировать</consult-button>
   <call-babes-button>Вызвать замерщика</call-babes-button>
@@ -16,7 +21,7 @@
     <div class="scene-kitchen-counter main-scene-layer-2 main-scene-layer"></div>
     <div class="clouds-back main-scene-layer-1 main-scene-layer"></div>
   </section>
-  <mainsection textColor="#ffffff" backgroundColor="#FCDAE1">
+  <mainsection textColor="#ffffff" backgroundColor="#fff1f5">
     <section class="we-create">
       <h1>
         <i class="we-create-cursive">Создаём</i>
@@ -45,17 +50,15 @@
       </supersection-nav>
       <subsection textColor="#FCDAE1" backgroundColor="#A55FFF"  :position="1">
         <template #title ref="title">
-          Износостойкие
-          <br />
-          <i>и&nbsp;благородные</i> материалы
+          Износостойкие <br/>и&nbsp;благородные материалы
         </template>
         <template #subtitle ref="subtitle">
           <material :count="3" folder="wood">Массив дерева</material>,
           <material :count="3" folder="wood">древесный шпон</material>,
           <material :count="3" folder="wood">МДФ&thinsp;+&thinsp;эмаль</material>,
-          <material :count="3" folder="wood">пластик</material>и&nbsp;
-          <material :count="3" folder="wood">стекло</material>мы&nbsp;используем
-          при&nbsp;производстве фасадов.
+          <material :count="3" folder="wood">пластик</material> и&nbsp;
+          <material :count="3" folder="wood">стекло</material> мы&nbsp;используем
+          при&nbsp;производстве фасадов
         </template>
         <template #content ref="subcontent">
           <p>
@@ -65,48 +68,41 @@
           </p>
           <p>
             Работаем с&nbsp;итальянскими фабриками-производителями —
-            <a
-              target="_blank"
-              href="https://www.sayerlack.com"
-            >Sayerlack</a>,
+            <a target="_blank" href="https://www.sayerlack.com">Sayerlack</a>,
             <a target="_blank" href="http://www.mobilclan.com/">Mobiclan</a>,
             <a target="_blank" href="https://www.ilcam.com">ILCAM</a>,
-            <a target="_blank" href="http://www.mosian.it">Mosian</a> и&nbsp;
-            <a target="_blank" href="http://www.attimecitalia.it">Attimec</a>.
+            <a target="_blank" href="http://www.mosian.it">Mosian</a> и&nbsp;<a target="_blank" href="http://www.attimecitalia.it">Attimec</a>.
           </p>
         </template>
       </subsection>
       <subsection id="kitchen-furniture" textColor="#EE7E4D" backgroundColor="#274AFF"  :position="2">
         <template #title>
-          Надёжная
-          <i>фурнитура</i>
+          Надёжная фурнитура
         </template>
-        <template
-          #subtitle
-        >Мебельную фурнитуру можно разделить на 2 группы: лицевая и крепежная (внутренняя)a</template>
+        <template #subtitle>Долговечная внутренняя и элегантная внешняя.</template>
         <template #content>
-          <p>
-            Внутренняя: скобы, элементы крепления, петли, механизмы ящиков, распашных и откидных
-            фасадов, сложные выкатные конструкции. Blum и Kesseböhmer, австрийская и немецкая.
-          </p>
+          <p>Устанавливаем традиционные и инновационные механизмы. 
+            Внутренняя: петли, механизмы ящиков, распашных и откидных фасадов, сложные выкатные конструкции. 
+            Blum и Hettich, австрийская и немецкая.</p>
           <p>Внешняя: ручки двери, ножки, замки.</p>
         </template>
       </subsection>
       <subsection id="kitchen-appliances" backgroundColor="#72C4F4" textColor="#3F4650" :position="3">
         <template #title>
-          Удобная
-          <i>в&nbsp;использовании</i> техника
+          Простая в&nbsp;использовании техника
         </template>
         <template
           #subtitle
-        >Мебельную фурнитуру можно разделить на 2 группы: лицевая и крепежная (внутренняя)</template>
+        >С интуитивно понятными интерфейсами</template>
         <template #content>
-          <p>Внутренняя: скобы, элементы крепления, петли, механизмы ящиков, распашных и откидных фасадов, сложные выкатные конструкции. Blum и Kesseböhmer, австрийская и немецкая.</p>
-          <p>Внешняя: ручки двери, ножки, замки.</p>
+          <p>Отдаём предпочтение сами и&nbsp;предлагаем клиентам простую в&nbsp;эксплуатации, но&nbsp;в&nbsp;то&nbsp;же&nbsp;время надёжную технику с&nbsp;отличным дизайном.</p>
+          <p>Комплектуем кухни профессиональной техникой различного формата и&nbsp;ценовой категории: Smeg, Miele, Cata, Teka, Bosch, Neff, Kuppersberg, Franke, Schock, Faber, Longran, Blanco</p>
         </template>
       </subsection>
   </supersection>
-  <gallery textColor="#000" backgroundColor="#fff">
+ 
+  <gallery class="category-gallery-block" textColor="#000" backgroundCol
+  or="#fff">
     <template #header>
       <h2 class="subcategory-full-title">
       В жизни
