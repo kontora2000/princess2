@@ -1,7 +1,7 @@
 <template>
-    <div class="phone-block fixed-block" v-hide>
+    <span class="phone-block fixed-block" v-hide>
           <a class="phone-number-link" href="tel:+78612153000"><slot></slot></a>
-    </div>
+    </span>
 </template>
 
 <script>

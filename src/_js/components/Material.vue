@@ -1,6 +1,6 @@
 <template>
   <span class="pseudolink" v-on:mouseenter="showImg" v-on:mouseleave="hideImg">
-    <slot></slot>\
+    <slot></slot>
     <div v-show="showImage" ref="imgContainer" class="material-image">
       <img ref="image" :src="currentImageSrc" />
     </div>

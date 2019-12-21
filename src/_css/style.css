@@ -99,7 +99,7 @@ input[type=tel] {
 
 .pseudolink {
 	cursor: default;
-	border-bottom: .5px dashed var(--BlackLinkBorder);
+	border-bottom: 1px dotted var(--BlackLinkBorder);
 	position: relative;
 	z-index: 5;
 }
@@ -243,32 +243,39 @@ ul {
 	z-index: 99;
 }
 
+.logo-contacts-wrapper {
+	margin: 0 auto;
+	padding: 32vh 0;
+	width: 24rem;
+}
+
 .address-block,
 .phone-block {
 	font-weight: 500;
 }
 
 .address-block {
-	font-size: .75rem;
+	font-family: 'Montserrat', sans-serif;
+	font-size: .6875rem;
+	line-height: 1rem;
 	letter-spacing: .1em;
-	left: 2rem;
-	top: 2rem;
+}
+
+.address-link {
 	text-transform: uppercase;
 }
 
 .phone-block {
-	font-size: 1.45rem;
-	letter-spacing: 0.05rem;
+	font-size: .875rem;
+	letter-spacing: .03em;
 	top: 2.15rem;
 }
 
 .address-block .hours {
-	display: block;
 	font-weight: 400;
 	letter-spacing: 0;
 	line-height: 100%;
-	margin-top: .5rem;
-	opacity: .56;	
+	margin-left: .5rem;
 }
 
 .address-link,
@@ -276,7 +283,6 @@ ul {
 .phone-number-link {
 	color: var(--BlackLinkOpacity);
 	border-bottom-color: var(--BlackLinkOpacityBorder);
-	display: block;
 	line-height: 100%;
 }
 
@@ -318,6 +324,12 @@ ul {
 .logo-cess {
 	margin-left: -.075rem;
 	width: 9.53125rem;
+}
+
+.logo-subtitle:after {
+	content: '';
+	display: inline-block;
+	margin: 0 .5rem;
 }
 
 .site-menu {
@@ -631,6 +643,9 @@ ul {
 	position: relative;
 	z-index: 7;
 }
+.category-gallery-block {
+	margin-top: 100vh;
+}
 
 .category-block>h1+.subtitle { 
 	max-width: 60vw;
@@ -644,10 +659,10 @@ ul {
 
 .category-nav {
 	border-top: .5px solid var(--BlackLinkBorder);
-	margin: 0;
+	margin: 7.35rem 0 0 5.5rem;
 	position: absolute;
 	transform: rotate(90deg);
-	transform-origin: 8% 53%;
+	transform-origin: 0% 0%;
 }
 
 .category-nav-row {
@@ -722,6 +737,7 @@ ul {
 }*/
 
 .subcategory-full-title {
+	margin-top: 6.75rem;
 	width: calc(100vw - 15rem);
 }
 
