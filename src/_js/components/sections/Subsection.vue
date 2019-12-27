@@ -1,6 +1,6 @@
 <template>
-  <div ref="wrapper" class="subcontent-wrapper">
-    <transition name="fade">
+  <div ref="wrapper" class="subcontent-wrapper" >
+    <transition name="fade"  mode="in-out">
     <div ref="sub" class="subcategory-content subsection" v-show="show">
       <h2 class="subcategory-full-title">
         <slot name="title" ></slot>

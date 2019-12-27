@@ -143,11 +143,12 @@ export default {
     // for (let i = 0; i < 4; i++) {
     //   animTimeline.add(TweenLite.to(bg, 1, { className: `k${i}${1}`, }));
     // }
-    animTimeline.to(bg, 0.5, { className: 'k1', })
-      .to(bg, 0.5, { className: 'k2', })
-      .to(bg, 0.5, { className: 'k3', })
-      .to(bg, 0.5, { className: 'k4', })
-      .to(bg, 0.5, { className: 'k5', });
+    const cName = bg.className;
+    animTimeline.to(bg, 0.5, { className: `${cName} k1`, })
+      .to(bg, 0.5, { className: `${cName} k2`, })
+      .to(bg, 0.5, { className: `${cName} k3`, })
+      .to(bg, 0.5, { className: `${cName} k4`, })
+      .to(bg, 0.5, { className: `${cName} k5`, });
     const pinScene = this.$scrollmagic.scene({
       triggerElement: this.$el,
       duration: window.screen.height * 1,

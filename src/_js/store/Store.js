@@ -12,7 +12,7 @@ export default new Vuex.Store({
     loadedCategories: [],
     currentCategory: '',
     currentSubsection: 0,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#fff1f5',
     textColor: '#000000',
   },
   mutations: {
