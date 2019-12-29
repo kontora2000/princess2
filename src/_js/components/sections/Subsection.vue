@@ -1,7 +1,6 @@
 <template>
-  <div ref="wrapper" class="subcontent-wrapper" >
-    <transition name="fade"  mode="in-out">
-    <div ref="sub" class="subcategory-content subsection" v-show="show">
+  <div ref="wrapper" class="subcontent-wrapper" style="opacity:0" >
+    <div ref="sub" class="subcategory-content subsection">
       <h2 class="subcategory-full-title">
         <slot name="title" ></slot>
       </h2>
@@ -12,7 +11,6 @@
         <slot name="content"></slot>
       </div>
     </div>
-    </transition>
   </div>
 </template>
 
@@ -73,13 +71,20 @@ export default {
         this.changeBackgroundColor();
         this.changeTextColor();
         this.isCurrent = true;
+        this.$el.style.opacity = '1';
+        TweenLite.to(this.$refs.wrapper, 0.4, { opacity: '1', });
         this.show = true;
         if (this.position > 1) {
           TweenLite.to(document.querySelector('.scene-kitchen-counter'), 0.4, { opacity: 0, });
+          document.querySelector('.scene-kitchen-counter').style.display = 'none';
         } else {
+          document.querySelector('.scene-kitchen-counter').style.display = 'block';
           TweenLite.to(document.querySelector('.scene-kitchen-counter'), 0.4, { opacity: 1, });
         }
-      } else this.isCurrent = false;
+      } else {
+        this.$refs.wrapper.style.opacity = '0';
+        this.isCurrent = false;
+      }
     },
   },
 };

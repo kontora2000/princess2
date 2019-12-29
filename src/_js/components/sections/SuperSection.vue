@@ -32,8 +32,17 @@ export default {
   },
   mixins: [sectionMixin],
   mounted() {
-    this.scene.on('enter', () => {
-      if (this.isAnimated === false) {
+    this.$root.$on('subsection-change', this.showFirst);
+    this.subsectionCount = 3;
+    if (this.subsectionCount !== 0) {
+      this.$el.style.minHeight = `${this.sections * 100}vh`;
+      this.$el.style.height = `${this.sections * 100}vh`;
+    }
+    this.$scrollmagic.updateScene(this.scene);
+  },
+  methods: {
+    showFirst(current) {
+      if (this.isAnimated === false && current === 1) {
         this.$el.querySelector('.subcontent-wrapper').style.opacity = '1';
         const menu = this.$el.querySelector('.category-nav');
         const title = this.$el.querySelector('.subcategory-full-title');      
@@ -45,15 +54,11 @@ export default {
         timeLine.fromTo(subtitle, 0.2, { opacity: 0, }, { opacity: 1, });
         timeLine.fromTo(content, 0.2, { opacity: 0, }, { opacity: 1, });
         this.isAnimated = true;
+      }  
+      if (this.isAnimated === false) { 
+        this.isAnimated = true; 
       }
-      // this.$root.$emit('subsection-change',1)
-    });
-    this.subsectionCount = 3;
-    if (this.subsectionCount !== 0) {
-      this.$el.style.minHeight = `${this.sections * 100}vh`;
-      this.$el.style.height = `${this.sections * 100}vh`;
-    }
-    this.$scrollmagic.updateScene(this.scene);
+    },
   },
 };
 </script>
