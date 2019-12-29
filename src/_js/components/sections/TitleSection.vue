@@ -3,8 +3,9 @@
   <section class="section-title-scene">
     <div class="section-title-container" ref="container">
       <div v-for="n in 8" class="section-title-text-row" :key="n" ref="rows">
-        <div class="section-title-text" v-for="k in 4" :key="k">
-          Шикарные&nbsp;кухни
+        <div class="section-title-text" v-for="k in 12" :key="k">
+          <!-- Шикарные&nbsp;кухни -->
+          <img class="section-title-text-img" src = "../../../assets/_img/title-sign-kitchen.png">
         </div>
       </div>
       <!-- <img src="../../../assets/_img/main-scene/kitchen.png" class="section-title-image" ref="image"/> -->
@@ -38,7 +39,6 @@ body {
 }
 
 .section-title-text-row {
-  max-height: 10vh;  
 }
 
 .section-title-text {
@@ -46,19 +46,22 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    font-size: 8.5vw;
+    max-height: 14vh;
+    /* font-size: 8.5vw;
     line-height: 12.75vh;
     color: #fff;
     font-family: Transgender Grotesk;
     text-transform: lowercase;
     text-shadow: 0px 16px 32px rgba(109, 0, 53, 0.08), 0px 6px 12px rgba(109, 0, 53, 0.06);
     text-align: center;
-    white-space: nowrap;
+    white-space: nowrap; */
 }
 
-.section-title-text img {
-  width: 20vw;
-  height: 100%;
+.section-title-text-img {
+  max-height: 20vh;
+  height: 20vh;
+  min-width: 10vw;
+  width: auto
 }
 
 .section-title-scene {

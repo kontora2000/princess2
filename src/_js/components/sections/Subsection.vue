@@ -82,7 +82,7 @@ export default {
           TweenLite.to(document.querySelector('.scene-kitchen-counter'), 0.4, { opacity: 1, });
         }
       } else {
-        this.$refs.wrapper.style.opacity = '0';
+        this.$refs.wrapper.style.opacity = '0.0';
         this.isCurrent = false;
       }
     },
